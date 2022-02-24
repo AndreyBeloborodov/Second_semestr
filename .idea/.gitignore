@@ -6,3 +6,6 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+.idea
+out
+ru.kpfu.itis.java1.2.iml
