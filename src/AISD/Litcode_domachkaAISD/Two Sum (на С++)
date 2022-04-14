@@ -1,0 +1,26 @@
+
+    https://leetcode.com/problems/two-sum/submissions/
+
+
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector < pair < int, int > > v(nums.size());
+        for (int i = 0; i < nums.size(); i++) v[i] = {nums[i], i};
+        sort(v.begin(), v.end());
+        vector < int > in(v.size());
+        for (int i = 0; i < v.size(); i++) {
+            nums[i] = v[i].first;
+            in[i] = v[i].second;
+        }
+        for (int i = 0; i < nums.size() - 1; i++) {
+            int a = nums[i], b = target - a;
+            if (a == b) {
+                if (nums[i] == nums[i + 1]) return {in[i], in[i + 1]};
+                else continue;
+            }
+            auto it = lower_bound(nums.begin(), nums.end(), b);
+            if (it == nums.end() || a + *it != target) continue;
+            int index = it - nums.begin();
+            return {in[i], in[index]};
+        }
+        return {};
+    }
