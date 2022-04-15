@@ -1,22 +1,23 @@
-package AISD.SageTree.SageTreeSumImpl;
+package AISD.SegTree.SegTreeSum;
 
-import AISD.SageTree.SageTree;
+import AISD.SegTree.SegTree;
 
-public class SageTreeSum<T> implements SageTree<T> {
+public class SegTreeSum implements SegTree {
     private int size = 1;
-    private T[] tree;
+    private Integer[] tree;
 
-    public SageTreeSum(int n) {
+    public SegTreeSum(int n) {
         while (size < n) size *= 2;
-        tree = new T[size * 2 - 1];
+        tree = new Integer[size * 2 - 1];
+        for (int i = 0; i < size * 2 - 1; i++) tree[i] = 0;
     }
 
     @Override
-    public void set(int i, T value) {
+    public void set(int i, Integer value) {
         set(i, value, 0, 0, size - 1);
     }
 
-    private void set(int i, T value, int x, int lx, int rx) {
+    private void set(int i, Integer value, int x, int lx, int rx) {
         if (i < lx || i > rx) return;
         if (i == lx && i == rx) {
             tree[x] = value;
@@ -29,13 +30,13 @@ public class SageTreeSum<T> implements SageTree<T> {
     }
 
     @Override
-    public T get(int l, int r) {
+    public Integer get(int l, int r) {
         return get(l, r, 0, 0, size - 1);
     }
 
-    private T get(int l, int r, int x, int lx, int rx) {
+    private Integer get(int l, int r, int x, int lx, int rx) {
         if (lx > r || rx < l) return 0;
-        if (lx >= l && rx <= l) return tree[x];
+        if (lx >= l && rx <= r) return tree[x];
         int mid = (lx + rx) / 2;
         return get(l, r, x * 2 + 1, lx, mid) + get(l, r, x * 2 + 2, mid + 1, rx);
     }
