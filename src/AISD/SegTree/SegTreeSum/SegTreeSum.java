@@ -1,8 +1,6 @@
 package AISD.SegTree.SegTreeSum;
 
-import AISD.SegTree.SegTree;
-
-public class SegTreeSum implements SegTree {
+public class SegTreeSum {
     private int size = 1;
     private Integer[] tree;
 
@@ -12,7 +10,6 @@ public class SegTreeSum implements SegTree {
         for (int i = 0; i < size * 2 - 1; i++) tree[i] = 0;
     }
 
-    @Override
     public void set(int i, Integer value) {
         set(i, value, 0, 0, size - 1);
     }
@@ -29,16 +26,15 @@ public class SegTreeSum implements SegTree {
         tree[x] = tree[x * 2 + 1] + tree[x * 2 + 2];
     }
 
-    @Override
-    public Integer get(int l, int r) {
-        return get(l, r, 0, 0, size - 1);
+    public Integer sum(int l, int r) {
+        return sum(l, r, 0, 0, size - 1);
     }
 
-    private Integer get(int l, int r, int x, int lx, int rx) {
+    private Integer sum(int l, int r, int x, int lx, int rx) {
         if (lx > r || rx < l) return 0;
         if (lx >= l && rx <= r) return tree[x];
         int mid = (lx + rx) / 2;
-        return get(l, r, x * 2 + 1, lx, mid) + get(l, r, x * 2 + 2, mid + 1, rx);
+        return sum(l, r, x * 2 + 1, lx, mid) + sum(l, r, x * 2 + 2, mid + 1, rx);
     }
 
 }
