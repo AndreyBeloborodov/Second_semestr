@@ -1,13 +1,13 @@
-package AISD.SegTree.SegTreeMin;
+package AISD.Semestrovka.SegTree.SegTreeSum;
 
-public class SegTreeMin {
+public class SegTreeSum {
     private int size = 1;
     private Integer[] tree;
 
-    public SegTreeMin(int n) {
+    public SegTreeSum(int n) {
         while (size < n) size *= 2;
         tree = new Integer[size * 2 - 1];
-        for (int i = 0; i < size * 2 - 1; i++) tree[i] = Integer.MAX_VALUE;
+        for (int i = 0; i < size * 2 - 1; i++) tree[i] = 0;
     }
 
     public void set(int i, Integer value) {
@@ -23,17 +23,18 @@ public class SegTreeMin {
         int mid = (lx + rx) / 2;
         set(i, value, x * 2 + 1, lx, mid);
         set(i, value, x * 2 + 2, mid + 1, rx);
-        tree[x] = Integer.min(tree[x * 2 + 1], tree[x * 2 + 2]);
+        tree[x] = tree[x * 2 + 1] + tree[x * 2 + 2];
     }
 
-    public Integer min(int l, int r) {
-        return min(l, r, 0, 0, size - 1);
+    public Integer sum(int l, int r) {
+        return sum(l, r, 0, 0, size - 1);
     }
 
-    private Integer min(int l, int r, int x, int lx, int rx) {
-        if (lx > r || rx < l) return Integer.MAX_VALUE;
+    private Integer sum(int l, int r, int x, int lx, int rx) {
+        if (lx > r || rx < l) return 0;
         if (lx >= l && rx <= r) return tree[x];
         int mid = (lx + rx) / 2;
-        return Integer.min(min(l, r, x * 2 + 1, lx, mid), min(l, r, x * 2 + 2, mid + 1, rx));
+        return sum(l, r, x * 2 + 1, lx, mid) + sum(l, r, x * 2 + 2, mid + 1, rx);
     }
+
 }

@@ -1,4 +1,4 @@
-package AISD.SegTree.SegTreeMax;
+package AISD.Semestrovka.SegTree.SegTreeMax;
 
 public class SegTreeMax {
     private int size = 1;

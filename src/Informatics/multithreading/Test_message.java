@@ -2,13 +2,13 @@ package Informatics.multithreading;
 
 import java.io.IOException;
 
-public class New_message {
+public class Test_message {
     public static void main(String[] args) {
         Thread message = new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
-                    System.out.println("NEW MESSAGE");
+                    System.out.println("TEST MESSAGE");
                     try {
                         Thread.sleep(1500);
                     } catch (InterruptedException e) {

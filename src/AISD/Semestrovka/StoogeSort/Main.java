@@ -1,6 +1,4 @@
-package AISD.StoogeSort;
-
-import AISD.CombSort.CombSort;
+package AISD.Semestrovka.StoogeSort;
 
 import java.util.Scanner;
 

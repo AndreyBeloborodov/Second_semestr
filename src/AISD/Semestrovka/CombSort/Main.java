@@ -1,4 +1,4 @@
-package AISD.CombSort;
+package AISD.Semestrovka.CombSort;
 
 import java.util.Scanner;
 

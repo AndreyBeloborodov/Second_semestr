@@ -1,7 +1,7 @@
-package AISD.SegTree;
+package AISD.Semestrovka.SegTree;
 
-import AISD.SegTree.SegTreeMax.SegTreeMax;
-import AISD.SegTree.SegTreeSum.SegTreeSum;
+import AISD.Semestrovka.SegTree.SegTreeMax.SegTreeMax;
+import AISD.Semestrovka.SegTree.SegTreeSum.SegTreeSum;
 
 public class Main {
     public static void main(String[] args) {

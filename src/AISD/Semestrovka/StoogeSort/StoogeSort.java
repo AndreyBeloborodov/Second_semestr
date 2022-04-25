@@ -1,4 +1,4 @@
-package AISD.StoogeSort;
+package AISD.Semestrovka.StoogeSort;
 
 import AISD.MergeSort.Sorting;
 import AISD.Swap.Swap;
