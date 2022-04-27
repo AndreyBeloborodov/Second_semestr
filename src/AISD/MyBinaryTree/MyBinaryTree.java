@@ -3,17 +3,29 @@ package AISD.MyBinaryTree;
 import java.util.Comparator;
 
 public class MyBinaryTree<T> {
+
+    class Node {
+        T value;
+        Node left = null;
+        Node right = null;
+
+        Node(T value) {
+            this.value = value;
+        }
+
+    }
+
     private final Comparator<T> comp;
-    Node<T> root = null;
+    Node root = null;
     MyBinaryTree(Comparator<T> comp) {
         this.comp = comp;
     }
 
     public void add(T value) { add(value, root); }
 
-    public void add(T value, Node<T> node) {
+    public void add(T value, Node node) {
         if (node == null) {
-            node = new Node<T>(value);
+            node = new Node(value);
             return;
         }
         if (comp.compare(value, node.value) < 0) {
@@ -25,9 +37,8 @@ public class MyBinaryTree<T> {
 
     public boolean find(T value) { return find(value, root); }
 
-    public boolean find(T value, Node<T> node) {
+    public boolean find(T value, Node node) {
         if (node == null) return false;
-        System.out.println(node.value);
         if (comp.compare(value, node.value) == 0) {
             return true;
         }

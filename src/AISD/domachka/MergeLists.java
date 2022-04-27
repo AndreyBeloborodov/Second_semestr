@@ -1,4 +1,4 @@
-package AISD.Litcode_domachkaAISD;
+package AISD.domachka;
 
 import AISD.MergeSort.MergeSort;
 

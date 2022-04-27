@@ -1,4 +1,4 @@
-package AISD.Litcode_domachkaAISD;
+package AISD.domachka;
 
 import java.util.Scanner;
 import java.util.Stack;

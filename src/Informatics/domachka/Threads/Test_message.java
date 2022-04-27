@@ -1,4 +1,4 @@
-package Informatics.multithreading;
+package Informatics.domachka.Threads;
 
 import java.io.IOException;
 
