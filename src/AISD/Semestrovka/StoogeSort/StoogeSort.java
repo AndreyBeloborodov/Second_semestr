@@ -1,7 +1,7 @@
 package AISD.Semestrovka.StoogeSort;
 
 import AISD.MergeSort.Sorting;
-import AISD.Swap.Swap;
+import My_pieces.Swap.Swap;
 
 import java.util.Comparator;
 

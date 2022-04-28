@@ -1,7 +1,7 @@
 package AISD.Semestrovka.CombSort;
 
 import AISD.MergeSort.Sorting;
-import AISD.Swap.Swap;
+import My_pieces.Swap.Swap;
 import java.util.Comparator;
 
 public class CombSort<T> implements Sorting<T> {

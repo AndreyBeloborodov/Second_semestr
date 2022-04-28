@@ -1,4 +1,4 @@
-package AISD.Swap;
+package My_pieces.Swap;
 
 public class Swap<T> {
     public void swap(T[] array, int i, int j) {
