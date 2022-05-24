@@ -33,6 +33,7 @@ public class LinesCounterImplRecursive implements LinesCounter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        if (lines == null) return 0;
         int result = 0;
         for (String str: lines) result += str.isEmpty() ? 0 : 1;
         return result;
